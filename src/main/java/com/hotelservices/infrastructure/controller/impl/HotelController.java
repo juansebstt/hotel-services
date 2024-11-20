@@ -30,5 +30,5 @@ public class HotelController implements HotelApi {
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.badRequest().build());
     }
-    
+
 }
