@@ -1,4 +1,17 @@
-FROM ubuntu:latest
-LABEL authors="under"
+FROM maven:3.9-amazoncorretto-21 AS builder
 
-ENTRYPOINT ["top", "-b"]
+COPY pom.xml .
+
+RUN mvn -e -b dependency:resolve
+
+COPY src ./src
+
+RUN mvn -e -B package -DskipTest
+
+FROM openjdk:21
+
+COPY --from=builder /target/hotel-services-0.0.1-SNAPSHOT.jar /app.jar
+
+EXPOSE 8081
+
+CMD ["java", "-jar", "/app.jar"]
