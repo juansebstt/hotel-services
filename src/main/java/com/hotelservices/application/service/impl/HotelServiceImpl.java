@@ -36,7 +36,9 @@ public class HotelServiceImpl implements HotelService {
 
     private Mono<Long> publishHotel(HotelEntity hotelEntity) {
         return Mono.just(hotelEntity)
-                .doOnNext(hotel -> streamBridge.send("hotel-out-0", hotel))
+                .doOnNext(hotel -> streamBridge.send("writeCache-out-0", hotel))
+                .flatMap(hotel -> Mono.just(1L))
+                .switchIfEmpty(Mono.just(0L));
     }
 
 
