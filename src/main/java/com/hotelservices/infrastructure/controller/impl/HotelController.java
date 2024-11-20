@@ -1,5 +1,6 @@
 package com.hotelservices.infrastructure.controller.impl;
 
+import com.hotelservices.application.service.HotelService;
 import com.hotelservices.domain.request.HotelCreatedRequest;
 import com.hotelservices.infrastructure.controller.HotelApi;
 import com.hotelservices.infrastructure.entity.HotelEntity;
@@ -14,13 +15,20 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HotelController implements HotelApi {
 
+    private final HotelService hotelService;
+
     @Override
     public Mono<ResponseEntity<Long>> createHotel(HotelCreatedRequest request) {
-        return null;
+        return hotelService.createHotel(request)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.badRequest().build());
     }
 
     @Override
     public Mono<ResponseEntity<List<HotelEntity>>> getHotels() {
-        return null;
+        return hotelService.getAllHotels()
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.badRequest().build());
     }
+    
 }
