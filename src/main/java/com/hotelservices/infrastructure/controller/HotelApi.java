@@ -20,5 +20,5 @@ public interface HotelApi {
 
     @GetMapping
     Mono<ResponseEntity<List<HotelEntity>>> getHotels();
-    
+
 }
