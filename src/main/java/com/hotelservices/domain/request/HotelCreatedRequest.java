@@ -18,5 +18,4 @@ public class HotelCreatedRequest {
     @NotNull(message = "The new Hotel name is required")
     @Schema(description = "Gets the name of a new hotel")
     private String hotelName;
-
 }
