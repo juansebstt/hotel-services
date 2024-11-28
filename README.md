@@ -8,3 +8,5 @@ Project requirements:
 - Java
 - Spring Boot
 - Redis
+-JWT
+- Load Balancer
