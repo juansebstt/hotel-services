@@ -22,8 +22,11 @@ public class RedisConfig {
 
     @Bean
     public ReactiveRedisOperations<String, HotelEntity> redisOperations(ReactiveRedisConnectionFactory factory) {
-        return new ReactiveRedisOperations<>(factory, new HotelEntityRedis ) {
+
+
+        return new ReactiveRedisOperations<>(factory, new HotelEntityRedisSerializer());
         }
-    }
 
 }
+
+
