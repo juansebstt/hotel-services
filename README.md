@@ -10,3 +10,4 @@ Project requirements:
 - Redis
 -JWT
 - Load Balancer
+- Nginex
