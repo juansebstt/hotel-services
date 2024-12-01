@@ -11,3 +11,4 @@ Project requirements:
 -JWT
 - Load Balancer
 - Nginex
+- AWS ELB
