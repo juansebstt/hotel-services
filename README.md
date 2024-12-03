@@ -12,3 +12,4 @@ Project requirements:
 - Load Balancer
 - Nginex
 - AWS ELB
+- Kafka
