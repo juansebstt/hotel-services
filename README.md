@@ -14,3 +14,4 @@ Project requirements:
 - AWS ELB
 - Kafka
 - API GATEWAY
+- AWS
