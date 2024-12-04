@@ -13,3 +13,4 @@ Project requirements:
 - Nginex
 - AWS ELB
 - Kafka
+- API GATEWAY
