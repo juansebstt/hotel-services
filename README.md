@@ -16,3 +16,4 @@ Project requirements:
 - API GATEWAY
 - AWS
 - Docker
+-Aws ELB
