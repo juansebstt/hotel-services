@@ -15,3 +15,4 @@ Project requirements:
 - Kafka
 - API GATEWAY
 - AWS
+- Docker
