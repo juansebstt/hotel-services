@@ -27,7 +27,8 @@ public class HotelServiceImpl implements HotelService {
 
     @Override
     public Mono<List<HotelEntity>> getAllHotels() {
-        return null;
+        return hotelRedisRepository.findAll()
+                .collectList();
     }
 
     private HotelEntity mapToEntity(HotelCreatedRequest request) {
