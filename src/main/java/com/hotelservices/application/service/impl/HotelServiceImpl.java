@@ -3,6 +3,7 @@ package com.hotelservices.application.service.impl;
 import com.hotelservices.application.service.HotelService;
 import com.hotelservices.domain.request.HotelCreatedRequest;
 import com.hotelservices.infrastructure.entity.HotelEntity;
+import com.hotelservices.infrastructure.repository.HotelRedisRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.List;
 public class HotelServiceImpl implements HotelService {
 
     private final StreamBridge streamBridge;
+    private final HotelRedisRepository hotelRedisRepository;
 
     @Override
     public Mono<Long> createHotel(HotelCreatedRequest request) {
