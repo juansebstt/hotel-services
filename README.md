@@ -136,7 +136,33 @@ By default, the application runs on ` http://localhost:8080/api.`
 
 # Docker Prerequisites
 To run this project, you must have Docker installed on your machine. Docker enables you to create a containerized instance of the application, which behaves as if it is running locally. This setup simplifies the process of managing dependencies and configurations, ensuring consistency across different environments.  
+
 Running the Application with Docker
+
 To run the application using Docker:  
 Build and Start the Containers
+
 Run the following command in the project directory to build the Docker images and start the containers:
+
+```sh
+docker-compose up --build
+```
+
+Once the services are up, access the Swagger UI at:  http://localhost:8080/swagger-ui/index.html  
+Stopping the Containers
+When you’re done testing, stop the services using:
+
+```sh
+docker-compose down
+```
+
+# API Documentation
+The project includes OpenAPI (Swagger) for API documentation. After the application is up and running, you can view and interact with the API documentation at:  http://localhost:8080/api/swagger-ui/index.html  
+
+# Unit Testing
+To run the tests for the application, use the following command:
+
+```sh
+mvn test
+```
+
