@@ -70,3 +70,73 @@ The API Gateway routes requests to the appropriate Hotel Service instances. Belo
 # Example Request
 
 Create a Hotel
+
+```sh
+POST http://localhost:8080/hotels -H "Content-Type: application/json" -d '{
+    "name": "Hotel ABC",
+    "location": "New York",
+    "rating": 4.5
+}'
+```
+
+# Example Response
+
+```json
+{
+    "id": 1,
+    "name": "Hotel ABC",
+    "location": "New York",
+    "rating": 4.5
+}
+```
+
+# Project Structure
+The project is organized following best practices for clean architecture and modular design.
+
+```
+├── src
+│   ├── main
+│   │   ├── java/com/example
+│   │   │   ├── application       # Main application entry point
+│   │   │   ├── controller        # REST controllers
+│   │   │   ├── domain            # Domain models
+│   │   │   ├── request           # Request models
+│   │   │   ├── infrastructure    # Infrastructure components
+│   │   │   ├── entity            # Entity models
+│   │   │   ├── repository        # Repository interfaces
+│   │   │   ├── service           # Service implementations
+│   │   │   └── util              # Utility classes
+│   │   └── resources
+│   │       ├── application.yaml  # Configuration File
+├── docker
+│   ├── Dockerfile                # Dockerfile for building the application image
+│   ├── docker-compose.yml        # Docker Compose file for running the services
+├── nginx
+│   ├── nginx.conf                # Nginx configuration file
+├── README.md                      # Documentation
+└── pom.xml                        # Maven configuration
+```
+
+# Running the Application
+# Build the Project
+After configuring the database, you need to build the project. Run the following Maven command in the project root directory to install dependencies:
+
+```sh
+mvn spring-boot:run
+```
+
+# Run the Application
+To start the application, execute the following command:
+
+```sh
+mvn spring-boot:run
+```
+
+By default, the application runs on ` http://localhost:8080/api.`
+
+# Docker Prerequisites
+To run this project, you must have Docker installed on your machine. Docker enables you to create a containerized instance of the application, which behaves as if it is running locally. This setup simplifies the process of managing dependencies and configurations, ensuring consistency across different environments.  
+Running the Application with Docker
+To run the application using Docker:  
+Build and Start the Containers
+Run the following command in the project directory to build the Docker images and start the containers:
