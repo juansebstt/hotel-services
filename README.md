@@ -165,4 +165,5 @@ To run the tests for the application, use the following command:
 ```sh
 mvn test
 ```
-
+Conclusions
+The Hotel Services API is a microservices-based application that provides comprehensive hotel management services. The system is built using Java and Spring Boot, leveraging a range of modern technologies to ensure scalability, reliability, and performance. The application architecture includes multiple microservices that handle different aspects of hotel management, such as hotel information, reservations, and customer interactions. Key features of the application include a microservices architecture, Redis caching, Nginx as an ELB, an API Gateway, reactive programming, and Kafka integration. The project structure follows best practices for clean architecture and modular design, making it easy to maintain and extend the application. By running the application with Docker, you can ensure consistency across different environments and simplify the process of managing dependencies and configurations. Overall, the Hotel Services API is a robust and scalable solution for managing hotel operations and providing a seamless experience for customers.
